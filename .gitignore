@@ -1,0 +1,253 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+pythonenv*
+pyenv/
+.virtualenv/
+virtualenv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+test-results/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IPython
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+poetry.lock
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL local files
+*.pgdata/
+postgresql.conf
+pg_hba.conf
+pg_ident.conf
+*.log
+
+# Alembic migrations - usually keep these, but exclude if you want to regenerate
+# migrations/
+# migrations/*.pyc
+# migrations/__pycache__/
+
+# Logs
+*.log
+logs/
+.logs/
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+*.iml
+.project
+.pydevproject
+
+# Testing
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+test-results/
+*.test.log
+
+# Docker
+*.pid
+docker-compose.override.yml
+docker-compose.*.yml
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.truststore
+.secrets/
+credentials/
+.credentials/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Uploads/Downloads
+uploads/
+downloads/
+media/
+files/
+static/
+images/
+assets/
+uploads/
+profiles/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Environment variables
+.env.*
+!.env.example
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Package manager files
+package-lock.json
+yarn.lock
+bun.lockb
+pnpm-lock.yaml
+
+# Node.js (if using for frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python version management
+.python-version
+.pyenv/
+__pypackages__/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Editor directories
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database dumps
+*.dump
+*.sql
+backup_*.sql
+
+# Configuration files with local settings
+config.local.*
+settings.local.*
+local_settings.py
+
+# Process files
+*.pid
+*.lock
+.pid
+.lock
+
+# Coverage
+.coverage
+.coverage.*
+*.cover
+htmlcov/
+
+# Ruff
+.ruff_cache/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyright
+.pyrightconfig.json
+.pyproject.toml.local
