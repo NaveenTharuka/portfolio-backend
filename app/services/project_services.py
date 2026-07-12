@@ -13,15 +13,15 @@ def getAllProjects(db:Session):
     except Exception as e:
         return {"error":str(e)}
 
-def addProject(project:ProjectCreate, db:Session):
+def addProject(project: ProjectCreate, db: Session):
     db_project = Project(
-        title = project.title,
-        description = project.description,
-        category = project.category,
-        tech = project.tech,
-        image = project.image,
-        github = project.github,
-        tags = project.tags
+        title=project.title,
+        description=project.description,
+        category=project.category,
+        tech=project.tech,  # Store as list/JSON array
+        image=project.image,
+        github=project.github,
+        tags=project.tags,  # Store as list/JSON array
     )
 
     try:
@@ -30,7 +30,8 @@ def addProject(project:ProjectCreate, db:Session):
         db.refresh(db_project)
         return db_project
     except Exception as e:
-        return {"error":str(e)}
+        db.rollback()  # Important: rollback on error
+        return {"error": str(e)}
 
 
 def deleteProject(id:UUID, db:Session):
