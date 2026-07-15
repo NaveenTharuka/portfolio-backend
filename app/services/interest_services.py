@@ -12,17 +12,17 @@ def getAllInterests(db:Session):
     except Exception as e:
         return {"error" : str(e)}
 
-def addInterest(Interest:InterestCreate, db: Session):
+def addInterest(interest:InterestCreate, db: Session):
     db_interest = Interest(
-        title = Interest.title,
-        desc = Interest.desc
+        title = interest.title,
+        desc = interest.desc
     )
 
     try:
-        db.add(db_Interest)
+        db.add(db_interest)
         db.commit()
-        db.refresh(db_Interest)
-        return db_Interest
+        db.refresh(db_interest)
+        return db_interest
     except Exception as e:
         return {"error":str(e)}
 
