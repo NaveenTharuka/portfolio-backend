@@ -2,7 +2,7 @@ from app.database import get_db
 from sqlalchemy.orm import Session
 from app.db_models import Project
 from app.models.project import ProjectCreate
-from fastapi import HTTPException
+from fastapi import HTTPException, status
 
 from uuid import UUID
 
@@ -21,6 +21,7 @@ def addProject(project: ProjectCreate, db: Session):
         tech=project.tech,  # Store as list/JSON array
         image=project.image,
         github=project.github,
+        demo_url=project.demo_url,
         tags=project.tags,  # Store as list/JSON array
     )
 
@@ -43,6 +44,6 @@ def deleteProject(id:UUID, db:Session):
     try:
         db.delete(db_project)
         db.commit()
-        return {"message": "Project Deleted Successfully"}
+        return {"message": "Project Deleted Successfully"}, status.HTTP_200_OK
     except Exception as e:
         return {"error":str(e)}

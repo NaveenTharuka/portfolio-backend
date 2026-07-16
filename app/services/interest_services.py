@@ -1,6 +1,6 @@
 from app.database import get_db
 from sqlalchemy.orm import Session
-from fastapi import HTTPException
+from fastapi import HTTPException, status
 from uuid import UUID
 
 from app.db_models import Interest
@@ -36,6 +36,6 @@ def deleteInterest(id:UUID, db: Session):
     try:
         db.delete(db_interest)
         db.commit()
-        return {"message": "Interest Deleted Successfully"}
+        return {"message": "Interest Deleted Successfully"}, status.HTTP_200_OK
     except Exception as e:
-        return {"error" : str(e)}
+        raise HTTPException(status_code=500, detail=str(e))

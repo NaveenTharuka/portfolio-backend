@@ -12,7 +12,7 @@ router = APIRouter()
 def get_all_projects(db : Session = Depends(get_db)):
     return project_services.getAllProjects(db)
 
-@router.delete("/project/delete/{id}",response_model=Project)
+@router.delete("/project/delete/{id}")
 def delete_project(id : UUID, db:Session = Depends(get_db)):
     return project_services.deleteProject(id, db)
 

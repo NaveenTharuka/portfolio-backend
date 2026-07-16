@@ -12,6 +12,7 @@ class Project(BaseModel):
     tech: List[str] 
     image: Optional[str] = None  
     github: Optional[str] = None  
+    demo_url:Optional[str] = None
     tags: List[str] 
     created_at: Optional[datetime] = Field(default_factory=datetime.now)
     updated_at: Optional[datetime] = Field(default_factory=datetime.now)
@@ -24,6 +25,7 @@ class ProjectCreate(BaseModel):
     tech: List[str] = Field(..., min_items=1)
     image: Optional[str] = None
     github: Optional[str] = None
+    demo_url:Optional[str] = None
     tags: List[str] = Field(default_factory=list)
 
 # For updating existing projects (partial updates)
@@ -34,4 +36,5 @@ class ProjectUpdate(BaseModel):
     tech: Optional[List[str]] = None
     image: Optional[str] = None
     github: Optional[str] = None
+    demo_url:Optional[str] = None
     tags: Optional[List[str]] = None

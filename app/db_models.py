@@ -14,7 +14,8 @@ class Project(Base):
     tech = Column(JSON, nullable=False)  # Store as JSON array
     image = Column(String, nullable=True)
     github = Column(String, nullable=True)
-    tags = Column(JSON, nullable=True)  # Store as JSON array
+    demo_url = Column(String, nullable=True)
+    tags = Column(JSON, nullable=True)  # Store as JSON arra
     created_at = Column(DateTime, default=datetime.datetime.now)
     updated_at = Column(DateTime, default=datetime.datetime.now)
 

@@ -12,7 +12,7 @@ router = APIRouter()
 def get_all_interests(db : Session = Depends(get_db)):
     return interest_services.getAllInterests(db)
 
-@router.delete("/interest/delete/{id}",response_model=InterestOut)
+@router.delete("/interest/delete/{id}")
 def delete_interest(id : UUID, db:Session = Depends(get_db)):
     return interest_services.deleteInterest(id, db)
 
