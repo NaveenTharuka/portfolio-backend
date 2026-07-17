@@ -8,7 +8,7 @@ from app.services import project_services
 
 router = APIRouter()
 
-@router.get("/projects/all",response_model=list[Project])
+@router.api_route("/projects/all",response_model=list[Project], methods=["GET", "HEAD"])
 def get_all_projects(db : Session = Depends(get_db)):
     return project_services.getAllProjects(db)
 
