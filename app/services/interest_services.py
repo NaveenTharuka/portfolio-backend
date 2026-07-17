@@ -15,7 +15,7 @@ def getAllInterests(db:Session):
 def addInterest(interest:InterestCreate, db: Session):
     db_interest = Interest(
         title = interest.title,
-        desc = interest.desc
+        description = interest.description
     )
 
     try:

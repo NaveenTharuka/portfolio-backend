@@ -18,7 +18,6 @@ def addProject(project: ProjectCreate, db: Session):
         title=project.title,
         description=project.description,
         category=project.category,
-        tech=project.tech,  # Store as list/JSON array
         image=project.image,
         github=project.github,
         demo_url=project.demo_url,

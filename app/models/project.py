@@ -9,7 +9,6 @@ class Project(BaseModel):
     title: str
     description: str
     category: str
-    tech: List[str] 
     image: Optional[str] = None  
     github: Optional[str] = None  
     demo_url:Optional[str] = None
@@ -22,7 +21,6 @@ class ProjectCreate(BaseModel):
     title: str = Field(..., min_length=1, max_length=100)
     description: str = Field(..., min_length=1, max_length=1000)
     category: str = Field(..., min_length=1, max_length=50)
-    tech: List[str] = Field(..., min_items=1)
     image: Optional[str] = None
     github: Optional[str] = None
     demo_url:Optional[str] = None
@@ -33,7 +31,6 @@ class ProjectUpdate(BaseModel):
     title: Optional[str] = Field(None, min_length=1, max_length=100)
     description: Optional[str] = Field(None, min_length=1, max_length=1000)
     category: Optional[str] = Field(None, min_length=1, max_length=50)
-    tech: Optional[List[str]] = None
     image: Optional[str] = None
     github: Optional[str] = None
     demo_url:Optional[str] = None

@@ -6,11 +6,11 @@ from datetime import datetime
 class Interest(BaseModel):
     id:UUID = Field(default_factory=uuid4)
     title : str
-    desc : str
+    description : str
 
 class InterestCreate(BaseModel):
     title: str
-    desc: str
+    description: str
 
 class InterestOut(Interest):
     pass
