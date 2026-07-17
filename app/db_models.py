@@ -11,7 +11,6 @@ class Project(Base):
     title = Column(String, nullable=False)
     description = Column(Text, nullable=False)
     category = Column(String, nullable=False)
-    tech = Column(JSON, nullable=False)  # Store as JSON array
     image = Column(String, nullable=True)
     github = Column(String, nullable=True)
     demo_url = Column(String, nullable=True)
