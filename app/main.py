@@ -21,12 +21,27 @@ app.include_router(projects_routes.router)
 app.include_router(interest_routes.router)
 
 
+origins = [
+    "http://localhost:3000",
+    "http://localhost:3001"
+]
+
+frontend_url = os.getenv("FRONTEND_URL")
+if frontend_url:
+    origins.append(frontend_url)
+
+# Clean and filter origins (remove None, duplicates, and trailing slashes)
+cleaned_origins = []
+for origin in origins:
+    if origin:
+        cleaned_origins.append(origin)
+        stripped = origin.rstrip("/")
+        if stripped not in cleaned_origins:
+            cleaned_origins.append(stripped)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        os.getenv("FRONTEND_URL")
-    ],
+    allow_origins=cleaned_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
