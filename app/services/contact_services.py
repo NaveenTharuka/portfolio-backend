@@ -1,7 +1,7 @@
 from app.models.contact import Contact, ContactOut ,ContactUpdate, ContactCreate
 from app.db_models import Contact
 from sqlalchemy.orm import Session
-from sqlalchemy import HTTPException
+from fastapi import HTTPException, status
 from uuid import UUID
 
 def createContact(contact:ContactCreate, db: Session):
