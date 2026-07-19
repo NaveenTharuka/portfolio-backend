@@ -1,8 +1,10 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends ,status
+from app.models.contact import ContactOut ,ContactCreate
 from app.services.contact_services import createContact, getContacts, deleteContact, markAsRead
 from app.database import get_db
 from sqlalchemy.orm import Session
 from uuid import UUID
+from typing import List
 
 router = APIRouter()
 
