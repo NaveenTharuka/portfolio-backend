@@ -2,10 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 # Import models to ensure they are registered on Base.metadata before creating tables
-from app.db_models import Project, Interest
+from app.db_models import Project, Interest,Contact
 import os
 
-from app.routes import projects_routes, interest_routes
+from app.routes import projects_routes, interest_routes, contact_routes
 
 # Create all tables on startup
 Base.metadata.create_all(bind=engine)
@@ -19,6 +19,7 @@ app = FastAPI(
 
 app.include_router(projects_routes.router)
 app.include_router(interest_routes.router)
+app.include_router(contact_routes.router)
 
 
 origins = [
