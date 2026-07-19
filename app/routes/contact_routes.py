@@ -17,9 +17,9 @@ def create_contact(contact:ContactCreate, db: Session = Depends(get_db)):
 def delete_contact(id:UUID, db:Session = Depends(get_db)):
     return deleteContact(id, db)
 
-@router.put("/contact/mark_as_read/{id}")
-def mark_as_read(id:UUID, db:Session = Depends(get_db)):
-    return markAsRead(id, db)
+@router.put("/contact/mark_as_read/{id}", response_model=ContactOut)
+def mark_as_read(id:UUID, read:bool ,db:Session = Depends(get_db)):
+    return markAsRead(id, read, db)
 
 @router.get("/contact/all", response_model=List[ContactOut])
 def get_contacts(db:Session = Depends(get_db)):

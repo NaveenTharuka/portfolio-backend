@@ -39,14 +39,14 @@ def deleteContact(id:UUID, db: Session):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-def markAsRead(id:UUID, db:Session):
+def markAsRead(id:UUID,read:bool ,db:Session):
     db_contact = db.query(Contact).filter(Contact.id == id).first()
 
     if not db_contact:
         raise HTTPException(status_code=404, detail="Contact not found")
 
     try:
-        db_contact.read = True
+        db_contact.read = read
         db.commit()
         db.refresh(db_contact)
         return db_contact
