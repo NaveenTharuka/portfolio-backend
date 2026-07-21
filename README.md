@@ -94,17 +94,11 @@ Interactive API Documentation:
 http://localhost:8000/docs
 ```
 
-## 🔒 Authentication
-
-Protected endpoints require a valid JWT access token.
-
 ## 📌 API Modules
 
-- Authentication
 - Projects
 - Skills
 - Interests
-- Experience
 - Certifications
 - Contact Messages
 - Dashboard
